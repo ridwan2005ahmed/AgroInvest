@@ -5,6 +5,19 @@ dotenv.config();
 
 const { Pool } = pg;
 
+// Validate environment variables
+if (!process.env.DATABASE_URL) {
+  console.error('❌ DATABASE_URL environment variable is not set');
+  process.exit(1);
+}
+
+if (!process.env.JWT_SECRET) {
+  console.error('❌ JWT_SECRET environment variable is not set');
+  process.exit(1);
+}
+
+console.log('🔍 Database URL preview:', process.env.DATABASE_URL.substring(0, 20) + '...');
+
 // Database connection pool
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,

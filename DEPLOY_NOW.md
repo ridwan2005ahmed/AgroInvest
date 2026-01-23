@@ -26,7 +26,7 @@
 3. Database: `agro_investment`
 4. Region: `Singapore`
 5. **Create Database**
-6. Copy **Internal Database URL**
+6. Copy **Internal Database URL**postgresql://agro_investment_user:MtM80vz0MUhqirfeYeAN4Evh5fAWuvIP@dpg-d5pau4fpm1nc73bsipu0-a/agro_investment
 
 #### Backend:
 1. **New** → **Web Service**
@@ -38,7 +38,7 @@
 7. Environment Variables:
    ```
    NODE_ENV=production
-   DATABASE_URL=<paste database URL>
+   DATABASE_URL=<postgresql://agro_investment_user:MtM80vz0MUhqirfeYeAN4Evh5fAWuvIP@dpg-d5pau4fpm1nc73bsipu0-a/agro_investment>
    JWT_SECRET=your-secret-key-change-this
    JWT_EXPIRES_IN=7d
    PORT=5000
