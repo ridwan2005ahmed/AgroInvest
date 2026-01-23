@@ -15,10 +15,17 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://*.vercel.app', 'https://vercel.app'],
+  origin: [
+    'http://localhost:3000',
+    'https://agro-invest-1mpa.vercel.app',
+    /^https:\/\/.*\.vercel\.app$/,
+    'https://vercel.app'
+  ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  preflightContinue: false,
+  optionsSuccessStatus: 200
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
